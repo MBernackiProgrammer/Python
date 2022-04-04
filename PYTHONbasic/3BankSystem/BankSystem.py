@@ -6,19 +6,14 @@ UserMoney = []
 def CreateAccount():
     print("create account")
 
-
-
-
-
-
-
-
-
-
-
 def Menu():
     print("=== Menu ===")
     print("Select option")
+
+    print("1. Make a transfer")
+    print("2. Rent monay")
+    print("3. Change passworld")
+
     option = input("Write number from x to y ")
 
     match(option):
@@ -27,23 +22,65 @@ def Menu():
 
         case '2':
             return 0
+        
+        case '3':
+            return 0
 
         case _: 
             print("Plese write oprtion from x to y")   
             Menu()    
             return 0
 
-def LogIn():
-    print("Write login and passworld")
-    login = input("Login : ")
-    login = input("Passworld : ")
+def ErrorWithLogin():
+    print("You made a mistake, try again...")
+    id = input("User ID = ")
+    passworld = input("Passworld = ")
+
+def Login():
+    while True:
+        print("Ok, fine. Now please write your Bank ID :")
+        WroteUserID = input("ID = ")
+        print("and now passworld :")
+        UserPassworld = input("Passworld = ")
+
+        
+
+        UserNameC = False
+        UserPassworldC = False
+        indexC = 0
+
+        for x in UsersID:
+            indexC = indexC + 1
+            if x == WroteUserID:
+                UserNameC = True
+                break
+
+        if len(UsersID) < 0:
+            if UsersPassworlds[indexC] == UserPassworld:
+                UserPassworldC = True
+        
+            if UserPassworldC and UserNameC == True:
+                print("LogedIn")
+        
+            if UserPassworldC or UserNameC == False:
+                print("Error try again")
+                Login()
+        else:
+            print("Sorry, but we can't find your account, try again later")
+            break
+
+
+        
+
+        
+
+        
+
+
+        
+
 
 print("Have you got account in our bank ?")
 MenuOption = input("select Y / N ")
-
-
-
-LogIn()
-print("Welcome back, how can I help you ?")
-while True:
-    Menu()
+if MenuOption == 'Y':
+    Login()
