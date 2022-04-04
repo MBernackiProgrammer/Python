@@ -1,4 +1,7 @@
 #Not ready
+from difflib import Match
+
+
 UsersID = []
 UsersPassworlds = []
 UserMoney = []
@@ -69,18 +72,9 @@ def Login():
             print("Sorry, but we can't find your account, try again later")
             break
 
-
-        
-
-        
-
-        
-
-
-        
-
-
 print("Have you got account in our bank ?")
 MenuOption = input("select Y / N ")
+
+
 if MenuOption == 'Y':
     Login()
