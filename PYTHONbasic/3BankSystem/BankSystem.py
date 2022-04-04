@@ -1,7 +1,7 @@
 #Not ready
-UsersID = ["123456"]
-UsersPassworlds = ["123456"]
-UserMoney = [1]
+UsersID = []
+UsersPassworlds = []
+UserMoney = []
 
 def CreateAccount():
     print("create account")
@@ -71,5 +71,7 @@ def Login():
 
 print("Have you got account in our bank ?")
 MenuOption = input("select Y / N ")
+
+
 if MenuOption == 'Y':
     Login()
