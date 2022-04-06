@@ -1,10 +1,13 @@
 #Not ready
-UsersID = ["123456"]
-UsersPassworlds = ["123456"]
-UserMoney = [1]
+UsersID = []
+UsersPassworlds = []
+UserMoney = []
 
 def CreateAccount():
-    print("create account")
+    print("")
+    IDuser = input("Your ID :")
+    PassworldUser = input("Your passworld")
+    return IDuser, PassworldUser
 
 def Menu():
     print("=== Menu ===")
@@ -68,8 +71,17 @@ def Login():
         else:
             print("Sorry, but we can't find your account, try again later")
             break
+def Start():
+    while True:
+        print("Have you got account in our bank ?")
+        MenuOption = input("select Y / N ")
+        if MenuOption == 'Y':
+            Login()
+            break
+        elif(MenuOption == "N"):
+            print("Ok, bye")
+            break
+        elif(MenuOption!= "N" and MenuOption == "Y"):
+            Start()
 
-print("Have you got account in our bank ?")
-MenuOption = input("select Y / N ")
-if MenuOption == 'Y':
-    Login()
+Start()
