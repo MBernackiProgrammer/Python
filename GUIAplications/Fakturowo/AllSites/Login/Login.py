@@ -1,9 +1,27 @@
-import this
 import PySimpleGUI as sg
 
 class Login:
     def IDErrorSubsystemLogin():
         print("Error")
+        Layout = [
+            [sg.Text("Sorry, but we can't login you to your account")],
+            [sg.Button("Try again"), sg.Button("Select another option of logining")]
+        ]
+
+        window = sg.Window('File Compare', Layout, size = (750,400))
+        while True:                             # The Event Loop
+            event, values = window.read()
+            # print(event, values) #debug
+            if event in (None, 'Exit', 'Cancel'):
+                break
+
+            if event == 'Try again':
+                Login.LoginByID()
+                window.close()
+
+            if event == 'Select another option of logining':
+                Login.LoginSite()
+                window.close()
 
     def EMailErrorSubsystemLogin():
         print("Error")
@@ -13,10 +31,13 @@ class Login:
         print(ID)
         print("Your password")
         print(Passworld)
+        if(ID == "1234" and Passworld == "1234"):
+            print("Launch program")
+        else:
+            Login.IDErrorSubsystemLogin()
 
     def LoginSite():
         Layout = [
-            [sg.Text("Something")],
             [sg.Text("Login by: ")],
             [sg.Button("Workers ID")],
             [sg.Button("Workers E-Mail")]
@@ -59,7 +80,7 @@ class Login:
                 window.close()
         
             if event == 'Login':
-                Login.IDLoginSubsystem()
+                Login.IDLoginSubsystem(values[0], values[1])
                 window.close()
 
 
