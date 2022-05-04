@@ -36,11 +36,12 @@ class Product:
             print("2. Add produkts")
             print("3. Search for a product")
             SelectedOption = input()
-            if(SelectedOption != ""):
+
+
+            if(ord(SelectedOption) >= 49 and ord(SelectedOption)<=57):
                 SelectedOption = int(SelectedOption)
                 if(SelectedOption > 0 and SelectedOption <= 3):
-                    break
-                
+                    break   
             else:
                 print("Try again correct range is from 1 to 3")
 
