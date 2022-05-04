@@ -9,9 +9,8 @@ class Login:
         ]
 
         window = sg.Window('File Compare', Layout, size = (750,400))
-        while True:                             # The Event Loop
+        while True:                             
             event, values = window.read()
-            # print(event, values) #debug
             if event in (None, 'Exit', 'Cancel'):
                 break
 
@@ -44,9 +43,8 @@ class Login:
         ]
 
         window = sg.Window('File Compare', Layout, size = (750,400))
-        while True:                             # The Event Loop
+        while True:
             event, values = window.read()
-            # print(event, values) #debug
             if event in (None, 'Exit', 'Cancel'):
                 break
 
@@ -70,9 +68,8 @@ class Login:
         ]
 
         window = sg.Window('File Compare', Layout, size = (750,400))
-        while True:                             # The Event Loop
+        while True:
             event, values = window.read()
-                # print(event, values) #debug
             if event in (None, 'Exit', 'Cancel'):
                 break
             if event == 'Return':
@@ -94,18 +91,7 @@ class Login:
         ]
 
         window = sg.Window('File Compare', Layout, size = (750,400))
-        while True:                             # The Event Loop
+        while True:
             event, values = window.read()
-    # print(event, values) #debug
             if event in (None, 'Exit', 'Cancel'):
                 break
-
-
-
-
-
-
-
-
-
-
