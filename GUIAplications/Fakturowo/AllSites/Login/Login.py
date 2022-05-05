@@ -1,6 +1,10 @@
 import PySimpleGUI as sg
 
 class Login:
+    loged = bool(True)
+    Password = ""
+    Login = ""
+
     def IDErrorSubsystemLogin():
         print("Error")
         Layout = [
@@ -26,16 +30,15 @@ class Login:
         print("Error")
 
     def IDLoginSubsystem(ID, Passworld):
-        print("Your login :")
-        print(ID)
-        print("Your password")
-        print(Passworld)
         if(ID == "1234" and Passworld == "1234"):
+            Login.Password = Passworld
+            Login.Login = ID
+            loged = bool(True)
             print("Launch program")
         else:
             Login.IDErrorSubsystemLogin()
 
-    def LoginSite():
+    def LoginSite(self):
         Layout = [
             [sg.Text("Login by: ")],
             [sg.Button("Workers ID")],
