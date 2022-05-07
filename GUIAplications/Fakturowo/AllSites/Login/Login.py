@@ -1,5 +1,6 @@
 import PySimpleGUI as sg
 
+
 class Login:
     loged = bool(True)
     Password = ""
@@ -12,7 +13,7 @@ class Login:
             [sg.Button("Try again"), sg.Button("Select another option of logining")]
         ]
 
-        window = sg.Window('File Compare', Layout, size = (750,400))
+        window = sg.Window('Fakturowo', Layout, size = (750,400))
         while True:                             
             event, values = window.read()
             if event in (None, 'Exit', 'Cancel'):
@@ -45,7 +46,7 @@ class Login:
             [sg.Button("Workers E-Mail")]
         ]
 
-        window = sg.Window('File Compare', Layout, size = (750,400))
+        window = sg.Window('Fakturowo', Layout, size = (750,400))
         while True:
             event, values = window.read()
             if event in (None, 'Exit', 'Cancel'):
@@ -62,15 +63,14 @@ class Login:
     def LoginByID():
         print("Login by ID")
         Layout = [
-            [sg.Text("Something")],
-            [sg.Text("Your ID :")],
-            [sg.InputText("")],
+            [sg.Text("Your ID :") ],
+            [sg.InputText("", justification='center')],
             [sg.Text("Your password")],
-            [sg.InputText("")],
+            [sg.InputText("", justification='center')],
             [sg.Button("Return"), sg.Button("Login")]
         ]
 
-        window = sg.Window('File Compare', Layout, size = (750,400))
+        window = sg.Window('Fakturowo', Layout, size = (750,400))
         while True:
             event, values = window.read()
             if event in (None, 'Exit', 'Cancel'):
@@ -93,7 +93,7 @@ class Login:
             [sg.Button("Workers E-Mail")]
         ]
 
-        window = sg.Window('File Compare', Layout, size = (750,400))
+        window = sg.Window('Fakturowo', Layout, size = (750,400))
         while True:
             event, values = window.read()
             if event in (None, 'Exit', 'Cancel'):

@@ -1,18 +1,18 @@
 import PySimpleGUI as sg
 
-class MainPage:
+class AccountantMainPage:
     
-    def SpawnMainPage(self):
-        print("Error")
+    def SpawnMainPage(self, login):
+        Welcome = "Welcome back " + login
         Layout = [
-            [sg.Text("Sorry, but we can't login you to your account")],
-            [sg.Button("Main page")],
-            [sg.Button("Income")],
-            [sg.Button("Outins")],
-            [sg.Button("Settings")]
+            [sg.Text(Welcome)],
+            [sg.Button("Main page", size=(15,1))],
+            [sg.Button("Income", size=(15,1))],
+            [sg.Button("Outins", size=(15,1))],
+            [sg.Button("Settings", size=(15,1))]
         ]
 
-        window = sg.Window('File Compare', Layout, size = (750,400))
+        window = sg.Window('Fakturowo', Layout, size = (750,400))
         while True:                             
             event, values = window.read()
             if event in (None, 'Exit', 'Cancel'):
